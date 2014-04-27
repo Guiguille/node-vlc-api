@@ -18,7 +18,8 @@ var Client = module.exports = function (opts) {
 
   opts = opts || {};
 
-  this._base = this.base || util.format('http://%s:%d',
+  this._base = this.base || util.format('http://:%s@%s:%d',
+    opts.pswd || 'password',
     opts.host || 'localhost',
     opts.port || 8080
   );
